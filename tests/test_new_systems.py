@@ -166,6 +166,26 @@ class TestQuadrotor2DIntegration:
         # Should stay near origin
         assert traj[0, -1, :4].abs().max() < 0.1
 
+    def test_custom_mass_forwarded_to_dynamics(self) -> None:
+        """Non-default mass should be forwarded to dynamics_kwargs."""
+        m, g = 2.0, 9.81
+        env = ncp.Quadrotor2DEnv(num_envs=1, mass=m, g=g, dt=0.01)
+        assert env.dynamics_kwargs["m"] == m
+        assert env.dynamics_kwargs["g"] == g
+        # Hover at custom mass should also stay stable
+        env.reset(torch.zeros(1, 6))
+        hover = torch.tensor([[[m * g / 2, m * g / 2]]]).expand(1, 50, 2)
+        traj = env.trajectories(hover)
+        assert traj[0, -1, :4].abs().max() < 0.1
+
+    def test_explicit_dynamics_kwargs_not_overridden(self) -> None:
+        """User-provided dynamics_kwargs should take precedence."""
+        env = ncp.Quadrotor2DEnv(
+            num_envs=1, mass=2.0, dynamics_kwargs={"m": 3.0}
+        )
+        assert env.dynamics_kwargs["m"] == 3.0  # explicit wins
+        assert env.dynamics_kwargs["g"] == 9.81  # default filled in
+
 
 class TestTwoLinkArmIntegration:
     def test_full_suite(self) -> None:

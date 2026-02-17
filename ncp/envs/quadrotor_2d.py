@@ -48,6 +48,12 @@ class Quadrotor2DEnv(BaseEnv):
 
         max_thrust = mass * g
 
+        # Forward mass/g to dynamics so bounds and physics stay consistent
+        if dynamics_kwargs is None:
+            dynamics_kwargs = {}
+        dynamics_kwargs.setdefault("m", mass)
+        dynamics_kwargs.setdefault("g", g)
+
         state_spec = StateSpec(dim=6, wrap_dims=(4,))
         control_spec = ControlSpec(
             dim=2,
