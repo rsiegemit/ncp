@@ -50,7 +50,7 @@ ctrl, tau = controller.lookup(torch.tensor([[0.5, 0.0]]))
 ```
 ncp/
   envs/           # Environment abstraction (BaseEnv + system-specific subclasses)
-  dynamics/        # Continuous-time dynamics functions (pendulum, unicycle, bicycle)
+  dynamics/        # Continuous-time dynamics functions (15 systems)
   geometry/        # Hypercube operations, intersection queries, grid generation
   algorithm/       # Core NCP: MPPI search, alpha binary search, builder loop
   evaluation/      # Lookup controller and closed-loop simulation
