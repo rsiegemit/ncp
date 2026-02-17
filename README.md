@@ -69,13 +69,25 @@ ncp/
 | `search_alpha_parallel` | Batched binary search for the tightest contraction rate per cell. |
 | `simulate` | Closed-loop simulation of the NCP controller from initial conditions. |
 
-### Included Dynamical Systems
+### Included Dynamical Systems (15)
 
-| System | State | Control | Wrap dims |
-|---|---|---|---|
-| **Inverted Pendulum** | `[theta, theta_dot]` | scalar torque | `(0,)` |
-| **Unicycle** | `[x, y, theta]` | `[v, omega]` | `(2,)` |
-| **Bicycle** | `[x, y, theta]` | `[v, delta]` | `(2,)` |
+| System | State | Control | Wrap dims | Field |
+|---|---|---|---|---|
+| **Inverted Pendulum** | 2D `[theta, theta_dot]` | 1 (torque) | `(0,)` | Classic control |
+| **Unicycle** | 3D `[x, y, theta]` | 2 `[v, omega]` | `(2,)` | Mobile robotics |
+| **Bicycle** | 3D `[x, y, theta]` | 2 `[v, delta]` | `(2,)` | Mobile robotics |
+| **Cart-Pole** | 4D `[x, x_dot, theta, theta_dot]` | 1 (force) | `()` | RL / LQR / MPC |
+| **Acrobot** | 4D `[q1, q2, q1_dot, q2_dot]` | 1 (tau2) | `(0, 1)` | RL / underactuated |
+| **Mountain Car** | 2D `[position, velocity]` | 1 (force) | `()` | RL |
+| **Pendubot** | 4D `[q1, q2, q1_dot, q2_dot]` | 1 (tau1) | `(0, 1)` | Underactuated |
+| **Furuta Pendulum** | 4D `[theta_arm, theta_pend, ...]` | 1 (torque) | `(0, 1)` | Control labs |
+| **Ball and Beam** | 4D `[r, r_dot, theta, theta_dot]` | 1 (torque) | `()` | MPC |
+| **Planar Quadrotor** | 6D `[x, y, x_dot, y_dot, phi, phi_dot]` | 2 `[f1, f2]` | `(4,)` | Aerospace / NMPC |
+| **2-Link Robot Arm** | 4D `[q1, q2, q1_dot, q2_dot]` | 2 `[tau1, tau2]` | `(0, 1)` | Robotics |
+| **CSTR** | 2D `[C_A, T]` | 1 (heat Q) | `()` | MPC / process |
+| **Van der Pol** | 2D `[x, x_dot]` | 1 (force) | `()` | Nonlinear control |
+| **Duffing Oscillator** | 2D `[x, x_dot]` | 1 (force) | `()` | Chaos control |
+| **Lotka-Volterra** | 2D `[prey, predator]` | 1 (harvest) | `()` | Ecological / bio |
 
 ## Adding a New System
 
@@ -133,7 +145,7 @@ pip install -e ".[dev]"
 pytest tests/ -v
 ```
 
-55 tests covering dynamics, geometry, environments, algorithm modules, and full end-to-end pipelines.
+158 tests covering dynamics, geometry, environments, algorithm modules, and full end-to-end pipelines across all 15 systems.
 
 ## License
 
