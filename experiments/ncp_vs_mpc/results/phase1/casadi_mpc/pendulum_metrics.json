@@ -1,0 +1,10 @@
+{
+  "system_name": "pendulum",
+  "controller_type": "casadi",
+  "total_sim_time_seconds": 22.415282249450684,
+  "solve_time_mean": 0.004693679045885801,
+  "solve_time_median": 0.003988504409790039,
+  "solve_time_max": 0.057729482650756836,
+  "ipopt_iterations_mean": 8.443635561438342,
+  "convergence_failures": 0
+}

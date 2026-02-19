@@ -1,0 +1,17 @@
+{
+  "system_name": "mountain_car",
+  "controller_type": "casadi_mpc",
+  "num_ics": 114,
+  "convergence_rate": 1.0,
+  "steps_to_converge_mean": 36.1929817199707,
+  "steps_to_converge_median": 32.0,
+  "trajectory_cost": 44.4973258972168,
+  "final_error_mean": 0.04237372800707817,
+  "final_error_median": 0.042885925620794296,
+  "max_control_effort": 1.0,
+  "control_energy": 32.78021240234375,
+  "total_wall_time": 19.453155517578125,
+  "solve_time_mean": 0.004488679580390453,
+  "solve_time_median": 0.003906965255737305,
+  "solve_time_max": 0.1195380687713623
+}

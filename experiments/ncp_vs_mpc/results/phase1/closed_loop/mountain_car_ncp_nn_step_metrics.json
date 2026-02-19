@@ -1,0 +1,17 @@
+{
+  "system_name": "mountain_car",
+  "controller_type": "ncp_nn_step",
+  "num_ics": 114,
+  "convergence_rate": 0.9912280701754386,
+  "steps_to_converge_mean": 34.58407211303711,
+  "steps_to_converge_median": 31.0,
+  "trajectory_cost": 374.61334228515625,
+  "final_error_mean": 3.4077301025390625,
+  "final_error_median": 0.039284609258174896,
+  "max_control_effort": 1.0,
+  "control_energy": 272.1152648925781,
+  "total_wall_time": 7.9317333698272705,
+  "solve_time_mean": 0.0018299901857972145,
+  "solve_time_median": 0.001615285873413086,
+  "solve_time_max": 0.004373788833618164
+}

@@ -1,0 +1,10 @@
+{
+  "system_name": "duffing",
+  "controller_type": "mppi",
+  "total_sim_time_seconds": 26.125082969665527,
+  "solve_time_mean": 0.004695540759712458,
+  "solve_time_median": 0.0046727657318115234,
+  "solve_time_max": 0.07408332824707031,
+  "ipopt_iterations_mean": 0.0,
+  "convergence_failures": 0
+}

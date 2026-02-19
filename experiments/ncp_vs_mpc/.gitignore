@@ -1,0 +1,7 @@
+# Large binary result files
+results/**/*.pt
+# Log files
+logs/
+# Python cache
+__pycache__/
+*.pyc

@@ -1,0 +1,10 @@
+{
+  "system_name": "furuta",
+  "controller_type": "mppi",
+  "total_sim_time_seconds": 4633.263924121857,
+  "solve_time_mean": 0.022496744990348816,
+  "solve_time_median": 0.022500276565551758,
+  "solve_time_max": 0.10431361198425293,
+  "ipopt_iterations_mean": 0.0,
+  "convergence_failures": 0
+}

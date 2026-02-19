@@ -1,0 +1,14 @@
+{
+  "system_name": "unicycle",
+  "build_time_seconds": 46058.10392475128,
+  "num_verified_cells": 841551,
+  "num_unverified_cells": 205237908,
+  "coverage_ratio": 0.004083623880243203,
+  "alpha_mean": 0.1343226432800293,
+  "alpha_median": 0.03338623046875,
+  "alpha_min": 0.0,
+  "alpha_max": 16.044830322265625,
+  "lookup_time_mean": 0.0,
+  "lookup_time_median": 0.0,
+  "lookup_time_max": 0.0
+}

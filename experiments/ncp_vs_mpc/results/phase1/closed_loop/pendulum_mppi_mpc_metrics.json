@@ -1,0 +1,17 @@
+{
+  "system_name": "pendulum",
+  "controller_type": "mppi_mpc",
+  "num_ics": 114,
+  "convergence_rate": 1.0,
+  "steps_to_converge_mean": 35.97368240356445,
+  "steps_to_converge_median": 31.0,
+  "trajectory_cost": 54.937713623046875,
+  "final_error_mean": 0.04422659054398537,
+  "final_error_median": 0.04476241022348404,
+  "max_control_effort": 2.0,
+  "control_energy": 65.3469467163086,
+  "total_wall_time": 14.046003818511963,
+  "solve_time_mean": 0.003176638390868902,
+  "solve_time_median": 0.003134489059448242,
+  "solve_time_max": 0.13768696784973145
+}

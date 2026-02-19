@@ -1,0 +1,10 @@
+{
+  "system_name": "van_der_pol",
+  "controller_type": "casadi",
+  "total_sim_time_seconds": 38.92745280265808,
+  "solve_time_mean": 0.0030397886876016855,
+  "solve_time_median": 0.0029058456420898438,
+  "solve_time_max": 0.007223606109619141,
+  "ipopt_iterations_mean": 3.181849024597116,
+  "convergence_failures": 0
+}

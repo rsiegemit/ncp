@@ -1,0 +1,17 @@
+{
+  "system_name": "pendulum",
+  "controller_type": "ncp_step",
+  "num_ics": 114,
+  "convergence_rate": 0.45614035087719296,
+  "steps_to_converge_mean": 16.173076629638672,
+  "steps_to_converge_median": 16.0,
+  "trajectory_cost": 29.339332580566406,
+  "final_error_mean": 0.9285459518432617,
+  "final_error_median": 0.9035078287124634,
+  "max_control_effort": 0.0,
+  "control_energy": 0.0,
+  "total_wall_time": 1.0906901359558105,
+  "solve_time_mean": 0.0009744018316268921,
+  "solve_time_median": 0.0009703636169433594,
+  "solve_time_max": 0.0029625892639160156
+}

@@ -1,0 +1,10 @@
+{
+  "system_name": "duffing",
+  "controller_type": "casadi",
+  "total_sim_time_seconds": 10.793657302856445,
+  "solve_time_mean": 0.003039836185052991,
+  "solve_time_median": 0.002930164337158203,
+  "solve_time_max": 0.07874417304992676,
+  "ipopt_iterations_mean": 3.112641567187022,
+  "convergence_failures": 0
+}

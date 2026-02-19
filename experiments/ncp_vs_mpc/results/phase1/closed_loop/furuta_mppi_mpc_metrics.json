@@ -1,0 +1,17 @@
+{
+  "system_name": "furuta",
+  "controller_type": "mppi_mpc",
+  "num_ics": 674,
+  "convergence_rate": 0.0,
+  "steps_to_converge_mean": NaN,
+  "steps_to_converge_median": NaN,
+  "trajectory_cost": NaN,
+  "final_error_mean": NaN,
+  "final_error_median": NaN,
+  "max_control_effort": NaN,
+  "control_energy": NaN,
+  "total_wall_time": 4709.924738407135,
+  "solve_time_mean": 0.02287106215953827,
+  "solve_time_median": 0.022874116897583008,
+  "solve_time_max": 0.1272890567779541
+}

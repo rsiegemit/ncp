@@ -1,0 +1,17 @@
+{
+  "system_name": "unicycle",
+  "controller_type": "mppi_mpc",
+  "num_ics": 562,
+  "convergence_rate": 0.09252669039145907,
+  "steps_to_converge_mean": 33.346153259277344,
+  "steps_to_converge_median": 32.0,
+  "trajectory_cost": 259.67816162109375,
+  "final_error_mean": 0.8615967631340027,
+  "final_error_median": 0.8622422814369202,
+  "max_control_effort": 1.41421377658844,
+  "control_energy": 154.0880584716797,
+  "total_wall_time": 493.98165225982666,
+  "solve_time_mean": 0.0029513135086745024,
+  "solve_time_median": 0.002949237823486328,
+  "solve_time_max": 0.0781855583190918
+}

@@ -1,0 +1,17 @@
+{
+  "system_name": "two_link_arm",
+  "controller_type": "casadi_mpc",
+  "num_ics": 674,
+  "convergence_rate": 1.0,
+  "steps_to_converge_mean": 111.86498260498047,
+  "steps_to_converge_median": 119.0,
+  "trajectory_cost": 115.2632827758789,
+  "final_error_mean": 0.059786356985569,
+  "final_error_median": 0.05754713714122772,
+  "max_control_effort": 14.142135620117188,
+  "control_energy": 6449.16259765625,
+  "total_wall_time": 1503.431545495987,
+  "solve_time_mean": 0.019409971311688423,
+  "solve_time_median": 0.012983083724975586,
+  "solve_time_max": 0.29582881927490234
+}

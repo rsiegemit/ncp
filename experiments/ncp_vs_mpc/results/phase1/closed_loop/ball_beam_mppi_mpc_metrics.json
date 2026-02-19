@@ -1,0 +1,17 @@
+{
+  "system_name": "ball_beam",
+  "controller_type": "mppi_mpc",
+  "num_ics": 674,
+  "convergence_rate": 0.040059347181008904,
+  "steps_to_converge_mean": 213.07408142089844,
+  "steps_to_converge_median": 239.0,
+  "trajectory_cost": 3040.07763671875,
+  "final_error_mean": 22.060131072998047,
+  "final_error_median": 2.167839765548706,
+  "max_control_effort": 5.000000953674316,
+  "control_energy": 2654.744140625,
+  "total_wall_time": 2820.5651602745056,
+  "solve_time_mean": 0.013807816430926323,
+  "solve_time_median": 0.013808012008666992,
+  "solve_time_max": 0.07928228378295898
+}

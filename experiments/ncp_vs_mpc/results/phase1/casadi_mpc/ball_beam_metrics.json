@@ -1,0 +1,10 @@
+{
+  "system_name": "ball_beam",
+  "controller_type": "casadi",
+  "total_sim_time_seconds": 1484.5324201583862,
+  "solve_time_mean": 0.01422362495213747,
+  "solve_time_median": 0.009322166442871094,
+  "solve_time_max": 0.29555463790893555,
+  "ipopt_iterations_mean": 5.191234234056412,
+  "convergence_failures": 0
+}

@@ -1,0 +1,17 @@
+{
+  "system_name": "mountain_car",
+  "controller_type": "mppi_mpc",
+  "num_ics": 114,
+  "convergence_rate": 1.0,
+  "steps_to_converge_mean": 42.99122619628906,
+  "steps_to_converge_median": 41.0,
+  "trajectory_cost": 49.40240478515625,
+  "final_error_mean": 0.05019862577319145,
+  "final_error_median": 0.04927917569875717,
+  "max_control_effort": 1.0,
+  "control_energy": 16.960962295532227,
+  "total_wall_time": 11.707666158676147,
+  "solve_time_mean": 0.0021812552586197853,
+  "solve_time_median": 0.002161264419555664,
+  "solve_time_max": 0.08231425285339355
+}

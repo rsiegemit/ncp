@@ -1,0 +1,17 @@
+{
+  "system_name": "lotka_volterra",
+  "controller_type": "mppi_mpc",
+  "num_ics": 114,
+  "convergence_rate": 0.0,
+  "steps_to_converge_mean": NaN,
+  "steps_to_converge_median": NaN,
+  "trajectory_cost": NaN,
+  "final_error_mean": NaN,
+  "final_error_median": NaN,
+  "max_control_effort": NaN,
+  "control_energy": NaN,
+  "total_wall_time": 185.24948453903198,
+  "solve_time_mean": 0.005184729117900133,
+  "solve_time_median": 0.005177974700927734,
+  "solve_time_max": 0.08300566673278809
+}

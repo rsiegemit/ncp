@@ -1,0 +1,10 @@
+{
+  "system_name": "cartpole",
+  "controller_type": "mppi",
+  "total_sim_time_seconds": 2933.9383368492126,
+  "solve_time_mean": 0.015941796824336052,
+  "solve_time_median": 0.015939950942993164,
+  "solve_time_max": 0.17737174034118652,
+  "ipopt_iterations_mean": 0.0,
+  "convergence_failures": 0
+}

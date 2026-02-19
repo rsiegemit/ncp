@@ -1,0 +1,10 @@
+{
+  "system_name": "unicycle",
+  "controller_type": "mppi",
+  "total_sim_time_seconds": 487.1418161392212,
+  "solve_time_mean": 0.0029215768445283175,
+  "solve_time_median": 0.0029201507568359375,
+  "solve_time_max": 0.1416187286376953,
+  "ipopt_iterations_mean": 0.0,
+  "convergence_failures": 0
+}

@@ -1,0 +1,17 @@
+{
+  "system_name": "van_der_pol",
+  "controller_type": "casadi_mpc",
+  "num_ics": 114,
+  "convergence_rate": 1.0,
+  "steps_to_converge_mean": 103.42105102539062,
+  "steps_to_converge_median": 102.0,
+  "trajectory_cost": 61.66565704345703,
+  "final_error_mean": 0.06005450338125229,
+  "final_error_median": 0.061128441244363785,
+  "max_control_effort": 3.912834405899048,
+  "control_energy": 59.933799743652344,
+  "total_wall_time": 39.5572030544281,
+  "solve_time_mean": 0.003097860375419259,
+  "solve_time_median": 0.00296783447265625,
+  "solve_time_max": 0.0315248966217041
+}

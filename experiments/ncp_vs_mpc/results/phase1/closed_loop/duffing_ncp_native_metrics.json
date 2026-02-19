@@ -1,0 +1,17 @@
+{
+  "system_name": "duffing",
+  "controller_type": "ncp_native",
+  "num_ics": 114,
+  "convergence_rate": 0.9912280701754386,
+  "steps_to_converge_mean": 18.362831115722656,
+  "steps_to_converge_median": 19.0,
+  "trajectory_cost": 28.78343391418457,
+  "final_error_mean": 0.02592495270073414,
+  "final_error_median": 0.013283554464578629,
+  "max_control_effort": 10.0,
+  "control_energy": 2817.9111328125,
+  "total_wall_time": 0.24370837211608887,
+  "solve_time_mean": 0.0004011605342384428,
+  "solve_time_median": 0.00039887428283691406,
+  "solve_time_max": 0.001077890396118164
+}

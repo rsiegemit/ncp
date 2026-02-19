@@ -1,0 +1,17 @@
+{
+  "system_name": "cartpole",
+  "controller_type": "mppi_mpc",
+  "num_ics": 674,
+  "convergence_rate": 0.39762611275964393,
+  "steps_to_converge_mean": 219.98880004882812,
+  "steps_to_converge_median": 224.0,
+  "trajectory_cost": 748.02294921875,
+  "final_error_mean": 0.097783163189888,
+  "final_error_median": 0.08690973371267319,
+  "max_control_effort": 10.000001907348633,
+  "control_energy": 6723.91552734375,
+  "total_wall_time": 2984.7012362480164,
+  "solve_time_mean": 0.01617226004600525,
+  "solve_time_median": 0.016171932220458984,
+  "solve_time_max": 0.1046905517578125
+}

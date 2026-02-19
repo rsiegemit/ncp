@@ -1,0 +1,17 @@
+{
+  "system_name": "van_der_pol",
+  "controller_type": "ncp_native",
+  "num_ics": 114,
+  "convergence_rate": 0.8596491228070176,
+  "steps_to_converge_mean": 26.479591369628906,
+  "steps_to_converge_median": 28.0,
+  "trajectory_cost": 38.00458908081055,
+  "final_error_mean": 0.29913002252578735,
+  "final_error_median": 0.0242172721773386,
+  "max_control_effort": 0.0,
+  "control_energy": 0.0,
+  "total_wall_time": 0.4919750690460205,
+  "solve_time_mean": 0.0009361002594232559,
+  "solve_time_median": 0.000858306884765625,
+  "solve_time_max": 0.018247604370117188
+}

@@ -1,0 +1,17 @@
+{
+  "system_name": "van_der_pol",
+  "controller_type": "mppi_mpc",
+  "num_ics": 114,
+  "convergence_rate": 1.0,
+  "steps_to_converge_mean": 108.49122619628906,
+  "steps_to_converge_median": 106.0,
+  "trajectory_cost": 69.73434448242188,
+  "final_error_mean": 0.058558546006679535,
+  "final_error_median": 0.05937030166387558,
+  "max_control_effort": 3.3727869987487793,
+  "control_energy": 61.94950866699219,
+  "total_wall_time": 59.450984954833984,
+  "solve_time_mean": 0.00458529032766819,
+  "solve_time_median": 0.004566669464111328,
+  "solve_time_max": 0.13742923736572266
+}

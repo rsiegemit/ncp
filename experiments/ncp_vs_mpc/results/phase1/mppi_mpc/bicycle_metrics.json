@@ -1,0 +1,10 @@
+{
+  "system_name": "bicycle",
+  "controller_type": "mppi",
+  "total_sim_time_seconds": 590.2910406589508,
+  "solve_time_mean": 0.0032509430311620235,
+  "solve_time_median": 0.003248929977416992,
+  "solve_time_max": 0.14514613151550293,
+  "ipopt_iterations_mean": 0.0,
+  "convergence_failures": 0
+}

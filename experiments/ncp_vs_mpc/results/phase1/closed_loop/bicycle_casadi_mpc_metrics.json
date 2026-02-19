@@ -1,0 +1,17 @@
+{
+  "system_name": "bicycle",
+  "controller_type": "casadi_mpc",
+  "num_ics": 562,
+  "convergence_rate": 0.0035587188612099642,
+  "steps_to_converge_mean": 23.0,
+  "steps_to_converge_median": 23.0,
+  "trajectory_cost": 552.3851318359375,
+  "final_error_mean": 1.8257718086242676,
+  "final_error_median": 1.87355375289917,
+  "max_control_effort": 1.0770329236984253,
+  "control_energy": 8.086523056030273,
+  "total_wall_time": 1694.8410949707031,
+  "solve_time_mean": 0.009681993164122105,
+  "solve_time_median": 0.009498834609985352,
+  "solve_time_max": 0.14740896224975586
+}

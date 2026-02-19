@@ -1,0 +1,17 @@
+{
+  "system_name": "two_link_arm",
+  "controller_type": "mppi_mpc",
+  "num_ics": 674,
+  "convergence_rate": 1.0,
+  "steps_to_converge_mean": 123.11276245117188,
+  "steps_to_converge_median": 125.0,
+  "trajectory_cost": 139.5188751220703,
+  "final_error_mean": 0.05986717343330383,
+  "final_error_median": 0.059935472905635834,
+  "max_control_effort": 14.141219139099121,
+  "control_energy": 5338.6845703125,
+  "total_wall_time": 2307.5197229385376,
+  "solve_time_mean": 0.027342110872268677,
+  "solve_time_median": 0.02733778953552246,
+  "solve_time_max": 0.18608522415161133
+}

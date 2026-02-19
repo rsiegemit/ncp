@@ -1,0 +1,14 @@
+{
+  "system_name": "pendulum",
+  "build_time_seconds": 1805.5958132743835,
+  "num_verified_cells": 50033,
+  "num_unverified_cells": 1535184,
+  "coverage_ratio": 0.03156224037466164,
+  "alpha_mean": 0.24807316064834595,
+  "alpha_median": 0.17608642578125,
+  "alpha_min": 0.0,
+  "alpha_max": 10.503326416015625,
+  "lookup_time_mean": 0.0,
+  "lookup_time_median": 0.0,
+  "lookup_time_max": 0.0
+}

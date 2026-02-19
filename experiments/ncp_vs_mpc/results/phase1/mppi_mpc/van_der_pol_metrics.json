@@ -1,0 +1,10 @@
+{
+  "system_name": "van_der_pol",
+  "controller_type": "mppi",
+  "total_sim_time_seconds": 59.830021381378174,
+  "solve_time_mean": 0.004517394118010998,
+  "solve_time_median": 0.00450444221496582,
+  "solve_time_max": 0.0733492374420166,
+  "ipopt_iterations_mean": 0.0,
+  "convergence_failures": 0
+}

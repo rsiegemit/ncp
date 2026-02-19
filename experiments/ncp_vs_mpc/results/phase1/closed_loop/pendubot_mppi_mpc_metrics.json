@@ -1,0 +1,17 @@
+{
+  "system_name": "pendubot",
+  "controller_type": "mppi_mpc",
+  "num_ics": 674,
+  "convergence_rate": 0.0,
+  "steps_to_converge_mean": NaN,
+  "steps_to_converge_median": NaN,
+  "trajectory_cost": 620.56494140625,
+  "final_error_mean": 1.9480489492416382,
+  "final_error_median": 1.5854202508926392,
+  "max_control_effort": 5.000000476837158,
+  "control_energy": 3060.314453125,
+  "total_wall_time": 2277.3353044986725,
+  "solve_time_mean": 0.010877184569835663,
+  "solve_time_median": 0.010860204696655273,
+  "solve_time_max": 0.09144878387451172
+}

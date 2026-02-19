@@ -1,0 +1,17 @@
+{
+  "system_name": "acrobot",
+  "controller_type": "mppi_mpc",
+  "num_ics": 674,
+  "convergence_rate": 0.0,
+  "steps_to_converge_mean": NaN,
+  "steps_to_converge_median": NaN,
+  "trajectory_cost": 1128.2281494140625,
+  "final_error_mean": 4.216442108154297,
+  "final_error_median": 3.9306206703186035,
+  "max_control_effort": 1.000000238418579,
+  "control_energy": 186.35092163085938,
+  "total_wall_time": 3592.6986911296844,
+  "solve_time_mean": 0.017161043360829353,
+  "solve_time_median": 0.01714015007019043,
+  "solve_time_max": 0.14969372749328613
+}

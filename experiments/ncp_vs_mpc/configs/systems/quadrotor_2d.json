@@ -1,0 +1,59 @@
+{
+  "ncp": {
+    "radius": 1.0,
+    "epsilon": 0.1,
+    "lipschitz": 5.0,
+    "tau": 1.0,
+    "dt": 0.02,
+    "min_alpha": 0.01,
+    "max_splits": 4,
+    "num_samples": 16384,
+    "batch_size": 50
+  },
+  "mpc": {
+    "num_samples": 2000,
+    "sigma": [
+      1.0,
+      1.0
+    ],
+    "temperature": 1.0,
+    "Q_diag": [
+      10.0,
+      10.0,
+      10.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "R_diag": [
+      0.01,
+      0.01
+    ]
+  },
+  "casadi": {
+    "Q_diag": [
+      10.0,
+      10.0,
+      10.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "R_diag": [
+      0.01,
+      0.01
+    ],
+    "terminal_weight": 10.0,
+    "max_iter": 200,
+    "tol": 1e-06
+  },
+  "sim": {
+    "max_steps": 300,
+    "precision": 0.05
+  },
+  "ic": {
+    "grid_per_dim": 3,
+    "num_random": 50,
+    "seed": 42
+  }
+}

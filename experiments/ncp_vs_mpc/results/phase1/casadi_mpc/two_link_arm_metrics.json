@@ -1,0 +1,10 @@
+{
+  "system_name": "two_link_arm",
+  "controller_type": "casadi",
+  "total_sim_time_seconds": 1477.170480966568,
+  "solve_time_mean": 0.019089605659246445,
+  "solve_time_median": 0.012676477432250977,
+  "solve_time_max": 0.18933463096618652,
+  "ipopt_iterations_mean": 4.997320848309615,
+  "convergence_failures": 0
+}

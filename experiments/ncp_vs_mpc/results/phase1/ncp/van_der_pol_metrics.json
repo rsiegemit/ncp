@@ -1,0 +1,14 @@
+{
+  "system_name": "van_der_pol",
+  "build_time_seconds": 8795.582578897476,
+  "num_verified_cells": 43108,
+  "num_unverified_cells": 277497,
+  "coverage_ratio": 0.13445828979585472,
+  "alpha_mean": 0.8554359078407288,
+  "alpha_median": 0.68829345703125,
+  "alpha_min": 0.0,
+  "alpha_max": 28.494354248046875,
+  "lookup_time_mean": 0.0,
+  "lookup_time_median": 0.0,
+  "lookup_time_max": 0.0
+}

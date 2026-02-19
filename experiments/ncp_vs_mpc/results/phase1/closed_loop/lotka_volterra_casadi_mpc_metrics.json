@@ -1,0 +1,17 @@
+{
+  "system_name": "lotka_volterra",
+  "controller_type": "casadi_mpc",
+  "num_ics": 114,
+  "convergence_rate": 0.0,
+  "steps_to_converge_mean": NaN,
+  "steps_to_converge_median": NaN,
+  "trajectory_cost": 66.49628448486328,
+  "final_error_mean": 0.16700826585292816,
+  "final_error_median": 0.16700823605060577,
+  "max_control_effort": 3.0,
+  "control_energy": 812.6641235351562,
+  "total_wall_time": 146.50480699539185,
+  "solve_time_mean": 0.0040200077928602695,
+  "solve_time_median": 0.0038559436798095703,
+  "solve_time_max": 0.12146759033203125
+}

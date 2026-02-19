@@ -1,0 +1,17 @@
+{
+  "system_name": "duffing",
+  "controller_type": "casadi_mpc",
+  "num_ics": 114,
+  "convergence_rate": 1.0,
+  "steps_to_converge_mean": 28.657894134521484,
+  "steps_to_converge_median": 29.0,
+  "trajectory_cost": 28.804122924804688,
+  "final_error_mean": 0.04397212713956833,
+  "final_error_median": 0.04306837171316147,
+  "max_control_effort": 10.0,
+  "control_energy": 242.4348602294922,
+  "total_wall_time": 10.804812908172607,
+  "solve_time_mean": 0.0030514555983245373,
+  "solve_time_median": 0.0029637813568115234,
+  "solve_time_max": 0.034618377685546875
+}

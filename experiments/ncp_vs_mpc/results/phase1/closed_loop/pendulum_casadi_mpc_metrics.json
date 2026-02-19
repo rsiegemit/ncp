@@ -1,0 +1,17 @@
+{
+  "system_name": "pendulum",
+  "controller_type": "casadi_mpc",
+  "num_ics": 114,
+  "convergence_rate": 1.0,
+  "steps_to_converge_mean": 39.76315689086914,
+  "steps_to_converge_median": 32.0,
+  "trajectory_cost": 68.53929138183594,
+  "final_error_mean": 0.042156290262937546,
+  "final_error_median": 0.042372532188892365,
+  "max_control_effort": 2.0,
+  "control_energy": 115.25887298583984,
+  "total_wall_time": 22.50576639175415,
+  "solve_time_mean": 0.004716840572655201,
+  "solve_time_median": 0.0040225982666015625,
+  "solve_time_max": 0.12025880813598633
+}

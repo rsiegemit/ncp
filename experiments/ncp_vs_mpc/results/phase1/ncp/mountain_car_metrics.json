@@ -1,0 +1,14 @@
+{
+  "system_name": "mountain_car",
+  "build_time_seconds": 2688.2312977313995,
+  "num_verified_cells": 87177,
+  "num_unverified_cells": 1362708,
+  "coverage_ratio": 0.060126837645744315,
+  "alpha_mean": 0.2069729119539261,
+  "alpha_median": 0.14776611328125,
+  "alpha_min": 0.0,
+  "alpha_max": 7.990936279296875,
+  "lookup_time_mean": 0.0,
+  "lookup_time_median": 0.0,
+  "lookup_time_max": 0.0
+}

@@ -1,0 +1,10 @@
+{
+  "system_name": "pendubot",
+  "controller_type": "mppi",
+  "total_sim_time_seconds": 2273.612163066864,
+  "solve_time_mean": 0.010854242369532585,
+  "solve_time_median": 0.010839223861694336,
+  "solve_time_max": 0.19412732124328613,
+  "ipopt_iterations_mean": 0.0,
+  "convergence_failures": 0
+}

@@ -1,0 +1,10 @@
+{
+  "system_name": "lotka_volterra",
+  "controller_type": "casadi",
+  "total_sim_time_seconds": 146.39545464515686,
+  "solve_time_mean": 0.004014312289655209,
+  "solve_time_median": 0.0038208961486816406,
+  "solve_time_max": 0.06712961196899414,
+  "ipopt_iterations_mean": 4.202514619883041,
+  "convergence_failures": 0
+}

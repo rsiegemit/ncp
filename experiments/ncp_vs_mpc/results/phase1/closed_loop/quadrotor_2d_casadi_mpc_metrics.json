@@ -1,0 +1,17 @@
+{
+  "system_name": "quadrotor_2d",
+  "controller_type": "casadi_mpc",
+  "num_ics": 778,
+  "convergence_rate": 1.0,
+  "steps_to_converge_mean": 182.28919982910156,
+  "steps_to_converge_median": 201.0,
+  "trajectory_cost": 135.97085571289062,
+  "final_error_mean": 0.06059054285287857,
+  "final_error_median": 0.06105517968535423,
+  "max_control_effort": 13.873435974121094,
+  "control_energy": 13699.03515625,
+  "total_wall_time": 1378.923036813736,
+  "solve_time_mean": 0.009345956146717072,
+  "solve_time_median": 0.008641958236694336,
+  "solve_time_max": 0.12375783920288086
+}

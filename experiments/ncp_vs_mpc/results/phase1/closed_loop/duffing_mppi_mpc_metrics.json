@@ -1,0 +1,17 @@
+{
+  "system_name": "duffing",
+  "controller_type": "mppi_mpc",
+  "num_ics": 114,
+  "convergence_rate": 1.0,
+  "steps_to_converge_mean": 47.140350341796875,
+  "steps_to_converge_median": 48.0,
+  "trajectory_cost": 41.98893737792969,
+  "final_error_mean": 0.045346491038799286,
+  "final_error_median": 0.04654495045542717,
+  "max_control_effort": 5.7709641456604,
+  "control_energy": 88.93250274658203,
+  "total_wall_time": 26.469656229019165,
+  "solve_time_mean": 0.00470501184463501,
+  "solve_time_median": 0.004678487777709961,
+  "solve_time_max": 0.08645224571228027
+}

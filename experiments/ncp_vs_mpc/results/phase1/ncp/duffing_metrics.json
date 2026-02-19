@@ -1,0 +1,14 @@
+{
+  "system_name": "duffing",
+  "build_time_seconds": 2276.05997300148,
+  "num_verified_cells": 16626,
+  "num_unverified_cells": 14643,
+  "coverage_ratio": 0.5317087210975727,
+  "alpha_mean": 2.2928037643432617,
+  "alpha_median": 2.128814697265625,
+  "alpha_min": 0.0,
+  "alpha_max": 28.494354248046875,
+  "lookup_time_mean": 0.0,
+  "lookup_time_median": 0.0,
+  "lookup_time_max": 0.0
+}

@@ -1,0 +1,17 @@
+{
+  "system_name": "quadrotor_2d",
+  "controller_type": "mppi_mpc",
+  "num_ics": 778,
+  "convergence_rate": 0.0,
+  "steps_to_converge_mean": NaN,
+  "steps_to_converge_median": NaN,
+  "trajectory_cost": 392.05322265625,
+  "final_error_mean": 1.0104963779449463,
+  "final_error_median": 0.8503074049949646,
+  "max_control_effort": 13.873437881469727,
+  "control_energy": 19886.623046875,
+  "total_wall_time": 2490.7610597610474,
+  "solve_time_mean": 0.010350698605179787,
+  "solve_time_median": 0.010349750518798828,
+  "solve_time_max": 0.08753395080566406
+}

@@ -1,0 +1,10 @@
+{
+  "system_name": "unicycle",
+  "controller_type": "casadi",
+  "total_sim_time_seconds": 769.6683192253113,
+  "solve_time_mean": 0.005109085235744715,
+  "solve_time_median": 0.005025625228881836,
+  "solve_time_max": 0.08629846572875977,
+  "ipopt_iterations_mean": 7.114810060711188,
+  "convergence_failures": 0
+}

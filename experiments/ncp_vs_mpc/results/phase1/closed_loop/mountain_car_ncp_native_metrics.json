@@ -1,0 +1,17 @@
+{
+  "system_name": "mountain_car",
+  "controller_type": "ncp_native",
+  "num_ics": 114,
+  "convergence_rate": 0.45614035087719296,
+  "steps_to_converge_mean": 22.05769157409668,
+  "steps_to_converge_median": 22.0,
+  "trajectory_cost": 39.534812927246094,
+  "final_error_mean": 0.9154995083808899,
+  "final_error_median": 0.8520050048828125,
+  "max_control_effort": 0.0,
+  "control_energy": 0.0,
+  "total_wall_time": 0.7850167751312256,
+  "solve_time_mean": 0.0016118062194436789,
+  "solve_time_median": 0.0016040802001953125,
+  "solve_time_max": 0.0035719871520996094
+}

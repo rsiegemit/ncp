@@ -118,10 +118,19 @@ class NCPBuilder:
         )
 
     @torch.no_grad()
-    def build(self, **extra_dynamics_kwargs: Any) -> NCPResult:
+    def build(
+        self,
+        checkpoint_fn: Callable[[NCPResult], None] | None = None,
+        checkpoint_interval: float = 300.0,
+        **extra_dynamics_kwargs: Any,
+    ) -> NCPResult:
         """Run the NCP algorithm and return the result.
 
         Args:
+            checkpoint_fn: If provided, called periodically with the current
+                partial :class:`NCPResult`. Useful for saving intermediate
+                results so that progress survives timeouts.
+            checkpoint_interval: Seconds between checkpoint calls (default 300).
             **extra_dynamics_kwargs: Merged into ``dynamics_kwargs``.
 
         Returns:
@@ -179,6 +188,7 @@ class NCPBuilder:
 
         unverified_centers: torch.Tensor | None = None
         unverified_radii: torch.Tensor | None = None
+        last_checkpoint = start
 
         # ---- Main loop ----
         while len(points) > 0:
@@ -329,6 +339,21 @@ class NCPBuilder:
                 radii = radii[keep]
                 controls = controls[keep]
                 splits = splits[keep]
+
+            # ---- Periodic checkpoint ----
+            now = time.time()
+            if checkpoint_fn is not None and now - last_checkpoint >= checkpoint_interval:
+                last_checkpoint = now
+                checkpoint_fn(NCPResult(
+                    verified_centers=buf_centers.tensor(),
+                    verified_radii=buf_radii.tensor(),
+                    verified_controls=buf_controls.tensor(),
+                    verified_alphas=buf_alphas.tensor(),
+                    verified_indices=buf_indices.tensor(),
+                    unverified_centers=unverified_centers,
+                    unverified_radii=unverified_radii,
+                    elapsed_seconds=now - start,
+                ))
 
         elapsed = time.time() - start
 

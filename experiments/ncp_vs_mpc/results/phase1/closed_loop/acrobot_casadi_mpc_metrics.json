@@ -1,0 +1,17 @@
+{
+  "system_name": "acrobot",
+  "controller_type": "casadi_mpc",
+  "num_ics": 674,
+  "convergence_rate": 0.002967359050445104,
+  "steps_to_converge_mean": 221.0,
+  "steps_to_converge_median": 221.0,
+  "trajectory_cost": 1082.1290283203125,
+  "final_error_mean": 4.0061869621276855,
+  "final_error_median": 3.5795624256134033,
+  "max_control_effort": 1.0,
+  "control_energy": 283.597900390625,
+  "total_wall_time": 5272.464410066605,
+  "solve_time_mean": 0.025393152609467506,
+  "solve_time_median": 0.02177906036376953,
+  "solve_time_max": 0.6313755512237549
+}
