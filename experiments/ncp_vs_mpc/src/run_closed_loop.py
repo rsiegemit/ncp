@@ -330,7 +330,7 @@ def pad_and_stack(trajs, max_len, dim):
 
 def save_closed_loop_metrics(
     trajs, ctrls, converged, steps, solve_times, total_time,
-    system_name, controller_type, out_dir,
+    system_name, controller_type, out_dir, dt=0.1,
 ):
     """Compute and save closed-loop metrics."""
     B = len(trajs)
@@ -358,6 +358,7 @@ def save_closed_loop_metrics(
         total_wall_time=total_time,
         system_name=system_name,
         controller_type=controller_type,
+        dt=dt,
     )
     metrics.save(out_dir / f"{system_name}_{controller_type}_metrics.json")
 
@@ -430,7 +431,7 @@ def main():
                 trajs, ctrls, conv, steps, st = simulate_ncp_native(
                     controller, sys_info, ics, cfg.ncp.dt, cfg.sim.max_steps, cfg.sim.precision)
                 total = time.time() - t0
-                m = save_closed_loop_metrics(trajs, ctrls, conv, steps, st, total, name, "ncp_native", cl_dir)
+                m = save_closed_loop_metrics(trajs, ctrls, conv, steps, st, total, name, "ncp_native", cl_dir, dt=cfg.ncp.dt)
                 results["ncp_native"] = m
                 print(f"  Convergence: {m.convergence_rate:.1%}, Time: {total:.1f}s")
 
@@ -440,7 +441,7 @@ def main():
                 trajs, ctrls, conv, steps, st = simulate_ncp_step(
                     controller, sys_info, ics, cfg.ncp.dt, cfg.sim.max_steps, cfg.sim.precision)
                 total = time.time() - t0
-                m = save_closed_loop_metrics(trajs, ctrls, conv, steps, st, total, name, "ncp_step", cl_dir)
+                m = save_closed_loop_metrics(trajs, ctrls, conv, steps, st, total, name, "ncp_step", cl_dir, dt=cfg.ncp.dt)
                 results["ncp_step"] = m
                 print(f"  Convergence: {m.convergence_rate:.1%}, Time: {total:.1f}s")
 
@@ -453,7 +454,7 @@ def main():
                 trajs, ctrls, conv, steps, st = simulate_ncp_native(
                     nn_controller, sys_info, ics, cfg.ncp.dt, cfg.sim.max_steps, cfg.sim.precision)
                 total = time.time() - t0
-                m = save_closed_loop_metrics(trajs, ctrls, conv, steps, st, total, name, "ncp_nn_native", cl_dir)
+                m = save_closed_loop_metrics(trajs, ctrls, conv, steps, st, total, name, "ncp_nn_native", cl_dir, dt=cfg.ncp.dt)
                 results["ncp_nn_native"] = m
                 print(f"  Convergence: {m.convergence_rate:.1%}, Time: {total:.1f}s")
 
@@ -463,7 +464,7 @@ def main():
                 trajs, ctrls, conv, steps, st = simulate_ncp_step(
                     nn_controller, sys_info, ics, cfg.ncp.dt, cfg.sim.max_steps, cfg.sim.precision)
                 total = time.time() - t0
-                m = save_closed_loop_metrics(trajs, ctrls, conv, steps, st, total, name, "ncp_nn_step", cl_dir)
+                m = save_closed_loop_metrics(trajs, ctrls, conv, steps, st, total, name, "ncp_nn_step", cl_dir, dt=cfg.ncp.dt)
                 results["ncp_nn_step"] = m
                 print(f"  Convergence: {m.convergence_rate:.1%}, Time: {total:.1f}s")
 
@@ -489,7 +490,7 @@ def main():
         trajs, ctrls, conv, steps, st = simulate_mppi(
             mppi_ctrl, sys_info, ics, cfg.ncp.dt, cfg.sim.max_steps, cfg.sim.precision)
         total = time.time() - t0
-        m = save_closed_loop_metrics(trajs, ctrls, conv, steps, st, total, name, "mppi_mpc", cl_dir)
+        m = save_closed_loop_metrics(trajs, ctrls, conv, steps, st, total, name, "mppi_mpc", cl_dir, dt=cfg.ncp.dt)
         results["mppi_mpc"] = m
         print(f"  Convergence: {m.convergence_rate:.1%}, Time: {total:.1f}s")
 
@@ -526,7 +527,7 @@ def main():
         trajs, ctrls, conv, steps, st = simulate_casadi(
             casadi_ctrl, sys_info, ics, cfg.ncp.dt, cfg.sim.max_steps, cfg.sim.precision)
         total = time.time() - t0
-        m = save_closed_loop_metrics(trajs, ctrls, conv, steps, st, total, name, "casadi_mpc", cl_dir)
+        m = save_closed_loop_metrics(trajs, ctrls, conv, steps, st, total, name, "casadi_mpc", cl_dir, dt=cfg.ncp.dt)
         results["casadi_mpc"] = m
         print(f"  Convergence: {m.convergence_rate:.1%}, Time: {total:.1f}s")
 
@@ -534,11 +535,12 @@ def main():
     print(f"\n{'='*60}")
     print(f"SUMMARY: {name} (phase {args.phase})")
     print(f"{'='*60}")
-    print(f"{'Controller':<18} {'Conv%':>8} {'Steps(mean)':>12} {'SolveTime(ms)':>14} {'TrajCost':>10}")
-    print(f"{'-'*65}")
+    print(f"{'Controller':<18} {'Conv%':>8} {'Steps(mean)':>12} {'SolveTime(ms)':>14} {'TrajCost':>10} {'alpha_med':>10}")
+    print(f"{'-'*75}")
     for cname, m in results.items():
+        alpha_str = f"{m.exp_alpha_median:>10.4f}" if m.exp_alpha_count > 0 else f"{'n/a':>10}"
         print(f"{cname:<18} {m.convergence_rate:>7.1%} {m.steps_to_converge_mean:>12.1f} "
-              f"{m.solve_time_mean*1000:>14.2f} {m.trajectory_cost:>10.2f}")
+              f"{m.solve_time_mean*1000:>14.2f} {m.trajectory_cost:>10.2f} {alpha_str}")
 
 
 if __name__ == "__main__":

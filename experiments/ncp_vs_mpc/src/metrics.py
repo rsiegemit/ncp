@@ -1,6 +1,7 @@
 """Metric dataclasses for NCP, MPC, and closed-loop evaluation."""
 
 import json
+import numpy as np
 import torch
 from dataclasses import dataclass, field, asdict
 from pathlib import Path
@@ -74,6 +75,15 @@ class ClosedLoopMetrics:
     solve_time_mean: float = 0.0
     solve_time_median: float = 0.0
     solve_time_max: float = 0.0
+    # Exponential convergence rate: ||x(t)|| <= e^{-alpha*t} ||x(0)||
+    # Estimated via least-squares fit of log(||x(t)||) vs t (converged trajectories only)
+    exp_alpha_mean: float = 0.0
+    exp_alpha_median: float = 0.0
+    exp_alpha_p25: float = 0.0
+    exp_alpha_p75: float = 0.0
+    exp_alpha_min: float = 0.0
+    exp_alpha_max: float = 0.0
+    exp_alpha_count: int = 0  # number of trajectories with valid alpha fit
 
     def save(self, path: Path) -> None:
         path.parent.mkdir(parents=True, exist_ok=True)
@@ -86,6 +96,22 @@ class ClosedLoopMetrics:
             return cls(**json.load(f))
 
 
+def _compute_exp_alpha(norms: np.ndarray, dt: float) -> float | None:
+    """Fit exponential convergence rate for a single trajectory.
+
+    Fits log(||x(t)||) = b - alpha*t via least-squares.
+    Returns alpha (positive = converging) or None if fit is invalid.
+    """
+    if len(norms) < 3 or norms[0] < 1e-6:
+        return None
+    t = np.arange(len(norms)) * dt
+    mask = norms > 1e-8
+    if mask.sum() < 2:
+        return None
+    coeffs = np.polyfit(t[mask], np.log(norms[mask]), 1)
+    return float(-coeffs[0])
+
+
 def compute_closed_loop_metrics(
     trajectories: torch.Tensor,   # (B, T, state_dim)
     controls: torch.Tensor,       # (B, T-1, ctrl_dim) or (B, T-1)
@@ -95,6 +121,7 @@ def compute_closed_loop_metrics(
     total_wall_time: float,
     system_name: str,
     controller_type: str,
+    dt: float = 0.1,              # integration time step (for alpha fit)
 ) -> ClosedLoopMetrics:
     """Compute closed-loop metrics from simulation results."""
     B = trajectories.shape[0]
@@ -142,6 +169,32 @@ def compute_closed_loop_metrics(
     else:
         solve_time_mean = solve_time_median = solve_time_max = 0.0
 
+    # Exponential convergence rate (alpha) for converged trajectories
+    alphas = []
+    for i in range(B):
+        if not converged[i]:
+            continue
+        n_steps = min(int(steps[i].item()) + 1, trajectories.shape[1])
+        norms_i = trajectories[i, :n_steps].norm(dim=-1).numpy()
+        alpha = _compute_exp_alpha(norms_i, dt)
+        if alpha is not None:
+            alphas.append(alpha)
+
+    if alphas:
+        a = np.array(alphas)
+        exp_alpha_mean = float(np.mean(a))
+        exp_alpha_median = float(np.median(a))
+        exp_alpha_p25 = float(np.percentile(a, 25))
+        exp_alpha_p75 = float(np.percentile(a, 75))
+        exp_alpha_min = float(np.min(a))
+        exp_alpha_max = float(np.max(a))
+        exp_alpha_count = len(alphas)
+    else:
+        exp_alpha_mean = exp_alpha_median = float("nan")
+        exp_alpha_p25 = exp_alpha_p75 = float("nan")
+        exp_alpha_min = exp_alpha_max = float("nan")
+        exp_alpha_count = 0
+
     return ClosedLoopMetrics(
         system_name=system_name,
         controller_type=controller_type,
@@ -158,4 +211,11 @@ def compute_closed_loop_metrics(
         solve_time_mean=solve_time_mean,
         solve_time_median=solve_time_median,
         solve_time_max=solve_time_max,
+        exp_alpha_mean=exp_alpha_mean,
+        exp_alpha_median=exp_alpha_median,
+        exp_alpha_p25=exp_alpha_p25,
+        exp_alpha_p75=exp_alpha_p75,
+        exp_alpha_min=exp_alpha_min,
+        exp_alpha_max=exp_alpha_max,
+        exp_alpha_count=exp_alpha_count,
     )

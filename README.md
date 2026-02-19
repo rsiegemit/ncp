@@ -166,12 +166,25 @@ bash slurm/submit_phase1.sh
 
 ### Metrics Collected
 
-| Category | Metric |
-|---|---|
-| **Timing** | Build time (NCP), per-step solve time, total wall time |
-| **NCP-specific** | Verified cells, coverage ratio, contraction rate (alpha) |
-| **Closed-loop** | Convergence rate, steps to converge, trajectory cost, final error, control energy |
-| **Convergence analysis** | Exponential decay rate via least-squares fit on log(||x(t)||) vs t |
+| Category | Metric | Description |
+|---|---|---|
+| **Timing** | `build_time_seconds` | NCP offline build time |
+| | `solve_time_{mean,median,max}` | Per-step controller solve time |
+| | `total_wall_time` | Total simulation wall time |
+| **NCP build** | `num_verified_cells` | Cells with certified contraction |
+| | `num_unverified_cells` | Cells that failed verification |
+| | `coverage_ratio` | Verified / total cells |
+| | `alpha_{mean,median,min,max}` | NCP contraction rate from binary search |
+| **CasADi-specific** | `ipopt_iterations_mean` | Average IPOPT iterations per solve |
+| | `convergence_failures` | Number of failed IPOPT solves |
+| **Closed-loop** | `convergence_rate` | Fraction of ICs reaching target |
+| | `steps_to_converge_{mean,median}` | Steps until ||x|| < precision |
+| | `trajectory_cost` | Mean sum of ||x(t)|| over trajectory |
+| | `final_error_{mean,median}` | ||x|| at final step |
+| | `max_control_effort` | Max ||u|| across all steps |
+| | `control_energy` | Mean sum of ||u(t)||^2 over trajectory |
+| **Exponential convergence** | `exp_alpha_{mean,median,p25,p75,min,max}` | Rate alpha where ||x(t)|| decays as e^{-alpha*t}. Estimated via least-squares fit of log(||x(t)||) vs t for converged trajectories. Higher = faster stabilization. |
+| | `exp_alpha_count` | Number of trajectories with valid alpha fit |
 
 ## Adding a New System
 
